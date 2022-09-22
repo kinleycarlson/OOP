@@ -8,8 +8,11 @@ class Coin:
     # sideup data attribute with 'Heads'.
 
     def __init__(self):         ##always start class with this method and self paramter
-        self.sideup = 'Heads'   ##allows you to define all attributes of the object
+        self.__sideup = 'Heads'   ##allows you to define all attributes of the object
 
+# by putting '__' in front of sideup hides the attribute (has to do it everywhere)
+    # when you hide the attribute, the program cannot affect the attributes
+    
     ##this only has 1 attribute ('sideup')
 
 
@@ -21,12 +24,12 @@ class Coin:
 
     def toss(self):
         if random.randint(0, 1) == 0:
-            self.sideup = 'Heads'
+            self.__sideup = 'Heads'
         else:
-            self.sideup = 'Tails'
+            self.__sideup = 'Tails'
 
     # The get_sideup method returns the value
     # referenced by sideup.
 
     def get_sideup(self):
-            return self.sideup
+            return self.__sideup
